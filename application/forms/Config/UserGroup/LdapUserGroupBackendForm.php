@@ -135,11 +135,10 @@ class LdapUserGroupBackendForm extends Form
             'group_class',
             array(
                 'preserveDefault'   => true,
-                'ignore'            => $disabled,
                 'disabled'          => $disabled,
                 'label'             => $this->translate('LDAP Group Object Class'),
                 'description'       => $this->translate('The object class used for storing groups on the LDAP server.'),
-                'value'             => $defaults->group_class
+                'placeholder'       => $defaults->group_class
             )
         );
         $this->addElement(
@@ -179,13 +178,12 @@ class LdapUserGroupBackendForm extends Form
             'group_name_attribute',
             array(
                 'preserveDefault'   => true,
-                'ignore'            => $disabled,
                 'disabled'          => $disabled,
                 'label'             => $this->translate('LDAP Group Name Attribute'),
                 'description'       => $this->translate(
                     'The attribute name used for storing a group\'s name on the LDAP server.'
                 ),
-                'value'             => $defaults->group_name_attribute
+                'placeholder'       => $defaults->group_name_attribute
             )
         );
         $this->addElement(
@@ -193,11 +191,10 @@ class LdapUserGroupBackendForm extends Form
             'group_member_attribute',
             array(
                 'preserveDefault'   => true,
-                'ignore'            => $disabled,
                 'disabled'          => $disabled,
                 'label'             => $this->translate('LDAP Group Member Attribute'),
                 'description'       => $this->translate('The attribute name used for storing a group\'s members.'),
-                'value'             => $defaults->group_member_attribute
+                'placeholder'       => $defaults->group_member_attribute
             )
         );
         $this->addElement(
@@ -228,11 +225,10 @@ class LdapUserGroupBackendForm extends Form
             'user_class',
             array(
                 'preserveDefault'   => true,
-                'ignore'            => $disabled,
                 'disabled'          => $disabled,
                 'label'             => $this->translate('LDAP User Object Class'),
                 'description'       => $this->translate('The object class used for storing users on the LDAP server.'),
-                'value'             => $defaults->user_class
+                'placeholder'       => $defaults->user_class
             )
         );
         $this->addElement(
@@ -272,13 +268,12 @@ class LdapUserGroupBackendForm extends Form
             'user_name_attribute',
             array(
                 'preserveDefault'   => true,
-                'ignore'            => $disabled,
                 'disabled'          => $disabled,
                 'label'             => $this->translate('LDAP User Name Attribute'),
                 'description'       => $this->translate(
                     'The attribute name used for storing a user\'s name on the LDAP server.'
                 ),
-                'value'             => $defaults->user_name_attribute
+                'placeholder'       => $defaults->user_name_attribute
             )
         );
         $this->addElement(

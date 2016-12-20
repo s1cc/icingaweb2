@@ -133,12 +133,10 @@ class LdapBackendForm extends Form
             'user_class',
             array(
                 'preserveDefault'   => true,
-                'required'          => ! $isAd,
-                'ignore'            => $isAd,
                 'disabled'          => $isAd ?: null,
                 'label'             => $this->translate('LDAP User Object Class'),
                 'description'       => $this->translate('The object class used for storing users on the LDAP server.'),
-                'value'             => $userClass
+                'placeholder'       => $userClass
             )
         );
         $this->addElement(
@@ -183,14 +181,12 @@ class LdapBackendForm extends Form
             'user_name_attribute',
             array(
                 'preserveDefault'   => true,
-                'required'          => ! $isAd,
-                'ignore'            => $isAd,
                 'disabled'          => $isAd ?: null,
                 'label'             => $this->translate('LDAP User Name Attribute'),
                 'description'       => $this->translate(
                     'The attribute name used for storing the user name on the LDAP server.'
                 ),
-                'value'             => $userNameAttribute
+                'placeholder'       => $userNameAttribute
             )
         );
         $this->addElement(
@@ -206,7 +202,6 @@ class LdapBackendForm extends Form
             'base_dn',
             array(
                 'preserveDefault'   => true,
-                'required'          => false,
                 'label'             => $this->translate('LDAP Base DN'),
                 'description'       => $this->translate(
                     'The path where users can be found on the LDAP server. Leave ' .
