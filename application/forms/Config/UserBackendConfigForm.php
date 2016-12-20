@@ -354,7 +354,14 @@ class UserBackendConfigForm extends ConfigForm
      */
     public static function inspectUserBackend(Form $form)
     {
-        $backend = UserBackend::create(null, new ConfigObject($form->getValues()));
+        $values = array_filter($form->getValues(),
+            function($v) {
+                if ($v || $v === 0 || $v === '0') {
+                    return $v;
+                }
+            }
+        );
+        $backend = UserBackend::create(null, new ConfigObject($values));
         if ($backend instanceof Inspectable) {
             return $backend->inspect();
         }
