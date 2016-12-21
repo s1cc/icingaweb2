@@ -46,4 +46,14 @@ class IndexController extends Controller
 
         $this->view->wizard = $wizard;
     }
+
+    /**
+     * Reset session and restart the wizard
+     */
+    public function restartAction()
+    {
+        $wizard = new WebWizard();
+        $wizard->clearSession();
+        $this->redirectNow('setup');
+    }
 }

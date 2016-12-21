@@ -133,6 +133,26 @@ if ($notifications->hasMessages()) {
         </tr></tbody></table>
       </div>
     </div>
+    <?php
+      if ($currentPos > 2) {
+        $restartFormWidth = (3 + 3) * 10;
+      } else {
+        $restartFormWidth = $currentPos * 10 + 5;
+      }
+    ?>
+    <?php
+      if ($currentPos !== count($pages) && $currentPos !== 0) {
+        ?>
+        <div id="setup-restart-wrapper" style="overflow: hidden">
+          <form id="setup-restart-form" name="setup-restart-form" title="<?= $this->translate('Restart the setup'); ?>" method="post" action="<?= $this->href('setup/index/restart'); ?>" class="restart-form" style="width: <?= $restartFormWidth; ?>%">
+            <button id="setup-restart-button" name="setup-restart-button" type="submit" class="restart-button">
+              <?= $this->icon('reply-all'); ?>
+            </button>
+          </form>
+        </div>
+        <?php
+      }
+    ?>
   </div>
   <div class="setup-content">
 <?php if ($finished): ?>
