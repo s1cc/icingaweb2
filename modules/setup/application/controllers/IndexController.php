@@ -53,7 +53,7 @@ class IndexController extends Controller
     public function restartAction()
     {
         $wizard = new WebWizard();
-        $wizard->clearSession(true);
+        $wizard->clearSession(false);
         $this->redirectNow('setup');
     }
 }
